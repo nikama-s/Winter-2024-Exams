@@ -4,9 +4,10 @@
 const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 
 const parseDay = (currentDay) => {
-    for (let i = 0; i < days.length; i++) {
-        if (currentDay.startsWith(days[i].toLowerCase())) {
-            return i + 1;
+    for (let day of days) {
+        if (currentDay.startsWith(day.toLowerCase())) {
+            const index = days.indexOf(day);
+            return index + 1;
         }
     }
     return -1;
