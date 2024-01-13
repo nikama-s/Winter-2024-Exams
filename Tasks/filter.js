@@ -5,12 +5,12 @@ const filter = (givenArr, typeName) => {
     const filter = [];
     for (let element of givenArr) {
         const index = givenArr.indexOf(element);
-        if (typeof givenArr[index] !== typeName) {
-            filter.unshift(index);
-        }
+        if (typeof element !== typeName) filter.unshift(index);
     }
-    for (let x of filter) givenArr.splice(x, 1);
+    for (let item of filter) givenArr.splice(item, 1);
     return givenArr;
 };
 
 module.exports = filter;
+
+
