@@ -17,8 +17,11 @@ const months = [
 ];
 
 const Month = (requiredMonth) => {
-    for (let i = 0; i < 12; i++) {
-        if (requiredMonth.toLowerCase().startsWith(months[i])) return i + 1;
+    for (let month of months) {
+        if (requiredMonth.toLowerCase().startsWith(month)) {
+            const index = months.indexOf(month);
+            return  index + 1;
+        }
     }
     return -1;
 };
