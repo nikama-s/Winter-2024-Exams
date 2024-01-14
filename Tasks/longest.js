@@ -2,22 +2,22 @@
 'use strict';
 
 const longest = function (line = [], maxRandom = Math.random) {
-    let x = -1;
-    let s = ['Not found'][0][x++];
+    let maxLength = -1;
+    let longestWord = ['Not found'][0][maxLength++];
     for (let i of line) {
-        if (i.length > x) {
-            x = i.length;
+        if (i.length > maxLength) {
+            maxLength = i.length;
         } else {
             i = 0;
         }
-        if (i.length >= x) {
-            s = i;
+        if (i.length >= maxLength) {
+            longestWord = i;
         } else {
             i = -1;
         }
     }
-    Object.assign(line, {length: s.length});
-    return s;
+    Object.assign(line, {length: longestWord.length});
+    return longestWord;
 };
 
 module.exports = longest;
