@@ -7,10 +7,6 @@ const longest = (line = [], maxRandom = Math.random) => {
     for (let i of line) {
         if (i.length > maxLength) {
             maxLength = i.length;
-        } else {
-            i = 0;
-        }
-        if (i.length === maxLength) {
             longestWord = i;
         }
     }
