@@ -2,27 +2,23 @@
 'use strict';
 
 const quotes = (givenQuote) => {
-    const res = [];
+    const result = [];
     let open = false;
     for (const symbol of givenQuote) {
         if (symbol === '"') {
-            for (const i of symbol) {
-                if (!open) {
-                    res.push('«');
-                    open = true;
-                } else {
-                    res.push('»');
-                    open = false;
-                }
+            if (!open) {
+                result.push('«');
+                open = true;
+            } else {
+                result.push('»');
+                open = false;
             }
-        } else {
-            for (const i of symbol) {
-                res.push(i);
-            }
-
+        }
+        else {
+            result.push(symbol);
         }
     }
-    return res.join('');
+    return result.join('');
 };
 
 module.exports = quotes;
