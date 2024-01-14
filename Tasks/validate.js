@@ -6,7 +6,8 @@ const isValid = (name) => {
 
     for (const symbol of name) {
         if (symbol === ' ') continue;
-        if (symbol.toLowerCase().charCodeAt(0) < 97 || symbol.toLowerCase().charCodeAt(0) > 122) {
+        const symbolCode = symbol.toLowerCase().charCodeAt(0);
+        if (symbolCode < 97 || symbolCode > 122) {
             return false;
         }
     }
