@@ -1,11 +1,10 @@
 // Split an array into two parts
 'use strict';
 
-let split_Array = (index, array) => {
-  const begin = array.slice(0, index);
-  const len = array.length;
-  array = array.slice(index, len);
-  return [begin, array];
+let split_Array = (startIndex, array) => {
+    const firstPart = array.slice(0, startIndex);
+    array = array.slice(startIndex, array.length);
+    return [firstPart, array];
 };
 
 module.exports = split_Array;
