@@ -1,13 +1,13 @@
 // Split string into array by the first occurrence of separator
-'use srtrict';
+'use strict';
 
-const SectionString = (s, t) => {
-  const i = s.indexOf(t);
-  if (i < 0 || t == '') {
-    return [s, ''];
+const sectionString = (str, separator) => {
+  const i = str.indexOf(separator);
+  if (i < 0 || separator === '') {
+    return [str, ''];
   } else {
-    return [s.slice(0, i), s.slice(i + t.length)];
+    return [str.slice(0, i), str.slice(i + separator.length)];
   }
 };
 
-module.exports = SectionString;
+module.exports = sectionString;
