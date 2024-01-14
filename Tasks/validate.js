@@ -2,22 +2,16 @@
 'use strict';
 
 const isValid = (name) => {
-    if (typeof name !== 'string') return false;
-    if (name.length === 0) return false;
-    if (!name.includes(' ')) return false;
-    {
-        for (const symbol of name) {
-            if (symbol === ' ') continue;
-            if (
-                symbol.toLowerCase().charCodeAt(0) >= 97 &&
-                symbol.toLowerCase().charCodeAt(0) <= 122
-            ) {
-            } else {
-                return false;
-            }
+    if (typeof name !== 'string' || name.length === 0 || !name.includes(' ')) return false;
+
+    for (const symbol of name) {
+        if (symbol === ' ') continue;
+        if (symbol.toLowerCase().charCodeAt(0) < 97 || symbol.toLowerCase().charCodeAt(0) > 122) {
+            return false;
         }
-        return true;
     }
+
+    return true;
 };
 
 module.exports = isValid;
