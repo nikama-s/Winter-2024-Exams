@@ -2,8 +2,9 @@
 'use strict';
 
 const sample = (givenArr) => {
-    givenArr = givenArr[Math.floor(Math.random() * givenArr.length)];
-    return givenArr;
+    const randomNum = Math.random() * givenArr.length;
+    const flooredNum = Math.floor(randomNum);
+    return givenArr[flooredNum];
 };
 
 module.exports = sample;
