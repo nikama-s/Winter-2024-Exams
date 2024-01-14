@@ -8,8 +8,7 @@ const types = function (givenArr) {
         boolean: 0,
     };
     for (const element of givenArr) {
-        const type = typeof element;
-        numTypes[type]++;
+        numTypes[typeof element]++;
     }
     return numTypes;
 };
