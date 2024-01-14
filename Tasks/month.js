@@ -17,7 +17,7 @@ const months = [
 ];
 
 const Month = (requiredMonth) => {
-    for (let month of months) {
+    for (const month of months) {
         if (requiredMonth.toLowerCase().startsWith(month)) {
             const index = months.indexOf(month);
             return  index + 1;
