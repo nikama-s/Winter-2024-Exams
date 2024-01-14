@@ -1,9 +1,7 @@
 // Change double quotation to open or close quotation
 'use strict';
 
-const empty = '';
-
-const quotes = function (givenQuote) {
+const quotes = (givenQuote) => {
     const res = [];
     let open = false;
     for (const symbol of givenQuote) {
@@ -18,14 +16,13 @@ const quotes = function (givenQuote) {
                 }
             }
         } else {
-            if (symbol !== '"') {
-                for (const i of symbol) {
-                    res.push(i);
-                }
+            for (const i of symbol) {
+                res.push(i);
             }
+
         }
     }
-    return res.join(empty);
+    return res.join('');
 };
 
 module.exports = quotes;
