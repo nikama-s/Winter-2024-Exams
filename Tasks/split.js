@@ -3,8 +3,9 @@
 
 let split_Array = (startIndex, array) => {
     const firstPart = array.slice(0, startIndex);
-    array = array.slice(startIndex, array.length);
-    return [firstPart, array];
+    const secondPart = array.slice(startIndex);
+    return [firstPart, secondPart];
 };
 
 module.exports = split_Array;
+
