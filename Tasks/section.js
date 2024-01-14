@@ -2,12 +2,12 @@
 'use strict';
 
 const sectionString = (str, separator) => {
-  const i = str.indexOf(separator);
-  if (i < 0 || separator === '') {
-    return [str, ''];
-  } else {
-    return [str.slice(0, i), str.slice(i + separator.length)];
-  }
+    const index = str.indexOf(separator);
+    if (index < 0 || separator === '') {
+        return [str, ''];
+    }
+    return [str.slice(0, index), str.slice(index + separator.length)];
 };
 
 module.exports = sectionString;
+
