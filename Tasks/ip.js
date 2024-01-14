@@ -1,19 +1,20 @@
 // Split string by the first occurrence of separator
+'use strict';
 
-Parseip = (i) => {
-  a = [];
-  if (i === '') return;
-  else {
-    B = i.split('.');
-    if (B.length != 4) return;
-    j = 0;
-    for (const b of B) {
-      a[j] = parseInt(b);
-      if (isNaN(a[j])) return;
-      j++;
+const Parseip = (i) => {
+    let a = [];
+    if (i === '') return;
+    else {
+        let B = i.split('.');
+        if (B.length != 4) return;
+        let j = 0;
+        for (const b of B) {
+            a[j] = parseInt(b);
+            if (isNaN(a[j])) return;
+            j++;
+        }
     }
-  }
-  return a;
+    return a;
 };
 
 module.exports = Parseip;
