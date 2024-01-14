@@ -2,23 +2,18 @@
 'use strict';
 
 const quotes = (givenQuote) => {
-    const result = [];
-    let open = false;
+    let result = '';
+    let isOpen = false;
     for (const symbol of givenQuote) {
         if (symbol === '"') {
-            if (!open) {
-                result.push('«');
-                open = true;
-            } else {
-                result.push('»');
-                open = false;
-            }
+            if (!isOpen) result += '«';
+            else result += '»';
+            isOpen = !isOpen;
         }
-        else {
-            result.push(symbol);
-        }
+        else result += symbol;
     }
-    return result.join('');
+    return result;
 };
 
 module.exports = quotes;
+
