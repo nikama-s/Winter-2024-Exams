@@ -6,7 +6,8 @@ const sectionString = (str, separator) => {
     if (index < 0 || separator === '') {
         return [str, ''];
     }
-    return [str.slice(0, index), str.slice(index + separator.length)];
+    const sepStr = [str.slice(0, index), str.slice(index + separator.length)];
+    return sepStr;
 };
 
 module.exports = sectionString;
