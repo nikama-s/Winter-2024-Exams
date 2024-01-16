@@ -18,7 +18,8 @@ const months = [
 
 const Month = (requiredMonth) => {
     for (const month of months) {
-        if (requiredMonth.toLowerCase().startsWith(month)) {
+        const monthLower = requiredMonth.toLowerCase();
+        if (monthLower.startsWith(month)) {
             const index = months.indexOf(month);
             return  index + 1;
         }
